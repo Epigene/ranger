@@ -22,3 +22,6 @@ Or install it yourself as:
 "1...3".to_range #
   #=> 1...3
 ```
+
+### TODO
+Implement string conversion as well, e.g. `"a..c".to_range #=> ["a","b","c"]`
