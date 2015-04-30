@@ -29,3 +29,4 @@ As of 1.1.0 works for string form integer __and__ date ranges
 
 ### TODO
 Implement string conversion as well, e.g. `"a..c".to_range #=> ["a","b","c"]`
+Steal `Alph = ("a".."z").to_a`
