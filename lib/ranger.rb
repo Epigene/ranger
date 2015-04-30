@@ -3,7 +3,7 @@ require 'active_support/all'
 
 class String
   def to_range
-    if self.match(/\A\d+...?\d+\z/)
+    if self.match(/\A\d+\.{2,3}\d+\z/)
       if self.include?("...")
         return rangeify("...")
       else
@@ -30,5 +30,5 @@ class String
       return two_range_dates[0].to_datetime.beginning_of_day..two_range_dates[1].to_datetime.end_of_day
     end
     DATE_REGEX = /\d{1,2}-\d{1,2}-\d{4}/
-    DATE_MATCH_REGEX = /\A#{DATE_REGEX}...?#{DATE_REGEX}\z/
+    DATE_MATCH_REGEX = /\A#{DATE_REGEX}\.{2,3}#{DATE_REGEX}\z/
 end
