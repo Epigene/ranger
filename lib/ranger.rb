@@ -9,7 +9,7 @@ class String
       else
         return rangeify("..")
       end
-    elsif self.match(/\A(\d{1,2}-\d{1,2}-\d{4})...?(\d{1,2}-\d{1,2}-\d{4})\z/)
+    elsif self.match(DATE_MATCH_REGEX)
       if self.include?("...")
         return d_rangeify("...")
       else
@@ -29,4 +29,6 @@ class String
       two_range_dates = self.split(type)
       return two_range_dates[0].to_datetime.beginning_of_day..two_range_dates[1].to_datetime.end_of_day
     end
+    DATE_REGEX = /\d{1,2}-\d{1,2}-\d{4}/
+    DATE_MATCH_REGEX = /\A#{DATE_REGEX}...?#{DATE_REGEX}\z/
 end
